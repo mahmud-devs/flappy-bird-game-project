@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    background: linear-gradient(to bottom, #add8e6, #90ee90);
+}
+
+canvas {
+    border: 10px solid #008000;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+}
+
+#gameButtons, #gameOverPopup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+#startButton{
+    font-size: 0;
+    background: transparent;
+    border: none;
+}
+#startButton::after{
+    position: absolute;
+    content: url(start.png);
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%,50%);
+    -webkit-transform: translate(-50%,50%);
+    -moz-transform: translate(-50%,50%);
+    -ms-transform: translate(-50%,50%);
+    -o-transform: translate(-50%,50%);
+}
+#retryButton {
+    color: white;
+    background-color: #008000;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    display: none;
+}
+
+#gameOverPopup {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#gameOverText {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#finalScore {
+    font-size: 30px;
+    font-weight: bold;
+    color: #008000;
+}
